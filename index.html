@@ -163,6 +163,9 @@
       <button id="btnCopyPositionOnly" style="padding: 5px; background: #9c27b0; color: white; border: none; border-radius: 3px; cursor: pointer; margin-left: 5px;">Copy Position Only</button>
       <button id="btnToggleControls" style="padding: 5px; background: #6c757d; color: white; border: none; border-radius: 3px; cursor: pointer; margin-left: 5px;">Hide</button>
     </div>
+    <div style="margin-top: 5px;">
+      <button id="btnShowAllPositions" style="padding: 5px; background: #fd7e14; color: white; border: none; border-radius: 3px; cursor: pointer; width: 100%;">Show All Positions for Current Murti</button>
+    </div>
     <div style="margin-top: 10px; border-top: 1px solid #ddd; padding-top: 10px;">
       <div style="font-weight: bold;">Batch Alignment</div>
       <div>
@@ -176,44 +179,44 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const murti = params.get("img") || "Murti_Images/G17.jpg";
+    const murti = params.get("img") || "Murti_Images/G18.jpg";
     document.getElementById("murtiImage").src = murti;
 
-    // Default positioning that will be used for any Ganpati image without specific settings
-    const defaultPositioning = {
-      P2: { top: "-15px", left: "110px", width: "85px", height: "93px" },
-      P4: { top: "-20px", left: "100px", width: "130px", height: "100px" },
-      P7: { top: "-25px", left: "100px", width: "125px", height: "100px" },
-      P8: { top: "-20px", left: "100px", width: "115px", height: "100px" },
-      P9: { top: "-25px", left: "95px", width: "130px", height: "100px" },
-      P10: { top: "-25px", left: "95px", width: "130px", height: "100px" },
-      P11: { top: "-50px", left: "90px", width: "120px", height: "150px" },
-      P12: { top: "-22px", left: "65px", width: "180px", height: "210px" },
-      P13: { top: "-20px", left: "65px", width: "180px", height: "210px" },
-      P5: { top: "-15px", left: "75px", width: "150px", height: "180px" },
-      P6: { top: "-10px", left: "80px", width: "140px", height: "170px" },
-      P14: { top: "-18px", left: "70px", width: "160px", height: "190px" },
-      P15: { top: "-22px", left: "65px", width: "180px", height: "210px" }
-    };
+    // // Default positioning that will be used for any Ganpati image without specific settings
+    // const defaultPositioning = {
+    //   P2: { top: "-15px", left: "110px", width: "85px", height: "93px" },
+    //   P4: { top: "-20px", left: "100px", width: "130px", height: "100px" },
+    //   P7: { top: "-25px", left: "100px", width: "125px", height: "100px" },
+    //   P8: { top: "-20px", left: "100px", width: "115px", height: "100px" },
+    //   P9: { top: "-25px", left: "95px", width: "130px", height: "100px" },
+    //   P10: { top: "-25px", left: "95px", width: "130px", height: "100px" },
+    //   P11: { top: "-50px", left: "90px", width: "120px", height: "150px" },
+    //   P12: { top: "-22px", left: "65px", width: "180px", height: "210px" },
+    //   P13: { top: "-20px", left: "65px", width: "180px", height: "210px" },
+    //   P5: { top: "-15px", left: "75px", width: "150px", height: "180px" },
+    //   P6: { top: "-10px", left: "80px", width: "140px", height: "170px" },
+    //   P14: { top: "-18px", left: "70px", width: "160px", height: "190px" },
+    //   P15: { top: "-22px", left: "65px", width: "180px", height: "210px" }
+    // };
 
     // Specific positioning for different Ganpati images
     const overlayPositions = {
       // Original G16 positioning
-      "Murti_Images/G17.jpg": {
-        P2: { top: "-20px", left: "95px", width: "85px", height: "93px" },
-        P4: { top: "-20px", left: "80px", width: "130px", height: "100px" },
-        P7: { top: "-25px", left: "85px", width: "130px", height: "100px" },
-        P8: { top: "-20px", left: "90px", width: "115px", height: "100px" },
-        P9: { top: "-35px", left: "80px", width: "130px", height: "100px" },
-        P10: { top: "-34px", left: "87px", width: "122px", height: "95px" },
-        P11: { top: "-15px", left: "87px", width: "110px", height: "82px" },
-        P12: { top: "-50px", left: "96px", width: "85px", height: "120px" },
-        P13: { top: "-26px", left: "77px", width: "109px", height: "98px" },
-        P5: { top: "-11px", left: "80px", width: "102px", height: "84px" },
-        P6: { top: "-26px", left: "95px", width: "95px", height: "96px" },
-        P14: { top: "-28px", left: "95px", width: "132px", height: "102px" },
-        P15: { top: "-15px", left: "96px", width: "105px", height: "82px" }
-      },
+      "Murti_Images/G18.jpg": {
+        P2: { top: "-30px", left: "102px", width: "98px", height: "132px" },
+        P4: { top: "-1px", left: "91px", width: "126px", height: "92px" },
+        P7: { top: "4px", left: "90px", width: "146px", height: "89px" },
+        P8: { top: "-4px", left: "101px", width: "121px", height: "111px" },
+        P9: { top: "-12px", left: "89px", width: "116px", height: "105px" },
+        P10: { top: "-22px", left: "98px", width: "113px", height: "111px" },
+        P11: { top: "-2px", left: "93px", width: "126px", height: "100px" },
+        P12: { top: "-31px", left: "101px", width: "112px", height: "122px" },
+        P13: { top: "0px", left: "77px", width: "145px", height: "103px" },
+        P5: { top: "1px", left: "81px", width: "129px", height: "107px" },
+        P6: { top: "-29px", left: "101px", width: "118px", height: "135px" },
+        P14: { top: "-12px", left: "95px", width: "173px", height: "117px" },
+        P15: { top: "-5px", left: "103px", width: "121px", height: "103px" }
+      },
       // Original G1 positioning
       "Murti_Images/G1.jpg": {
         P2: { top: "-7px", left: "43px", width: "85px", height: "93px" },
@@ -295,11 +298,17 @@
     };
 
     function showOverlay(imgSrc, overlayKey) {
+      console.log(`showOverlay called with: ${imgSrc}, ${overlayKey}`); // Debug log
+      
       const container = document.querySelector('.container1');
 
       // Remove all existing overlays before adding new one
       const existingOverlays = container.querySelectorAll('.drag-overlay, .resize-handle');
-      existingOverlays.forEach(el => container.removeChild(el));
+      existingOverlays.forEach(el => {
+        if (el.parentNode) {
+          el.parentNode.removeChild(el);
+        }
+      });
 
       // Create wrapper for overlay to handle drag operations
       const wrapper = document.createElement('div');
@@ -327,8 +336,9 @@
         pos = overlayPositions[murti][overlayKey];
       } else {
         // Use default positioning if specific positioning is not available
-        pos = defaultPositioning[overlayKey];
         console.log(`Using default positioning for ${murti} with ${overlayKey}`);
+        // Simple default position for missing images
+        pos = { top: "0px", left: "100px", width: "100px", height: "100px" };
       }
       
       wrapper.style.top = pos.top;
@@ -345,12 +355,14 @@
       // Make it draggable
       makeDraggable(wrapper);
       
-      // Update the position controls
+      // Update the position controls immediately
       updateControlsFromOverlay(wrapper);
       
       // Show control panel
       const controls = document.getElementById('adjustmentControls');
       controls.style.display = 'block';
+      
+      console.log(`Overlay created and added to container`); // Debug log
     }
     
     function addResizeHandles(element) {
@@ -446,6 +458,9 @@
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);
         
+        // Auto-update the overlayPositions when drag ends
+        updateOverlayPositions(element);
+        
         e.preventDefault();
         e.stopPropagation();
       }
@@ -516,6 +531,9 @@
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);
         
+        // Auto-update the overlayPositions when resize ends
+        updateOverlayPositions(element);
+        
         e.preventDefault();
         e.stopPropagation();
       }
@@ -526,11 +544,54 @@
       startEvent.preventDefault(); // Prevent text selection
       startEvent.stopPropagation(); // Stop event bubbling
     }
+    
+    // Function to automatically update overlayPositions when dragging or resizing
+    function updateOverlayPositions(element) {
+      const overlayKey = element.querySelector('img').getAttribute('data-key');
+      const murtiName = document.getElementById('murtiImage').src.split('/').pop();
+      const murtiPath = `Murti_Images/${murtiName}`;
+      const style = getComputedStyle(element);
+      
+      // Ensure the murti path exists in overlayPositions
+      if (!overlayPositions[murtiPath]) {
+        overlayPositions[murtiPath] = {};
+      }
+      
+      // Update the position
+      overlayPositions[murtiPath][overlayKey] = {
+        top: style.top,
+        left: style.left,
+        width: style.width,
+        height: style.height
+      };
+      
+      console.log(`Auto-updated ${overlayKey} position for ${murtiPath}:`, overlayPositions[murtiPath][overlayKey]);
+    }
 
     const buttons = document.getElementsByClassName('btn1');
     const keys = ["P2","P4","P7","P8","P9","P10","P11","P12","P13","P5","P6","P14","P15"];
+    
+    // Use both onclick and addEventListener for maximum compatibility
     for (let i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener('click', () => showOverlay(keys[i]+".png", keys[i]));
+      const key = keys[i];
+      const imgSrc = key + ".png";
+      
+      // Set onclick directly
+      buttons[i].onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(`Direct onclick: ${key}`);
+        showOverlay(imgSrc, key);
+        return false;
+      };
+      
+      // Also add event listener as backup
+      buttons[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(`Event listener: ${key}`);
+        showOverlay(imgSrc, key);
+      }, { capture: true });
     }
 
     function mergeImages(includeOverlays) {
@@ -596,12 +657,52 @@
       const width = document.getElementById('adjustWidth').value;
       const height = document.getElementById('adjustHeight').value;
       
+      // Update the overlay position
       overlay.style.top = top + 'px';
       overlay.style.left = left + 'px';
       overlay.style.width = width + 'px';
       overlay.style.height = height + 'px';
       
-      showInlineMessage('Position updated');
+      // Get the current pheta key and murti
+      const overlayKey = overlay.querySelector('img').getAttribute('data-key');
+      const murtiName = document.getElementById('murtiImage').src.split('/').pop();
+      const murtiPath = `Murti_Images/${murtiName}`;
+      
+      // Update the overlayPositions object dynamically
+      if (!overlayPositions[murtiPath]) {
+        overlayPositions[murtiPath] = {};
+      }
+      
+      // Update the position in the overlayPositions object
+      overlayPositions[murtiPath][overlayKey] = {
+        top: top + 'px',
+        left: left + 'px',
+        width: width + 'px',
+        height: height + 'px'
+      };
+      
+      // Generate and display the updated code
+      const updatedPositionCode = `${overlayKey}: { top: "${top}px", left: "${left}px", width: "${width}px", height: "${height}px" }`;
+      
+      // Show the updated position in the code output
+      const codeOutput = document.getElementById('codeOutput');
+      codeOutput.innerHTML = `
+        <strong>Updated Position for ${murtiPath}:</strong><br>
+        <code style="background: #e9ecef; padding: 2px 4px; border-radius: 2px;">${updatedPositionCode}</code><br><br>
+        <small style="color: #666;">Position automatically updated in overlayPositions object!</small>
+      `;
+      codeOutput.style.display = 'block';
+      
+      // Copy the updated position to clipboard
+      navigator.clipboard.writeText(updatedPositionCode).then(() => {
+        showInlineMessage('✓ Position updated & copied to clipboard!');
+      }).catch(err => {
+        showInlineMessage('✓ Position updated in code!');
+      });
+      
+      // Log the entire updated overlayPositions object to console for debugging
+      console.log('Updated overlayPositions:', overlayPositions);
+      console.log(`Updated ${overlayKey} for ${murtiPath}:`, overlayPositions[murtiPath][overlayKey]);
     });
 
     document.getElementById('btnShowCode').addEventListener('click', function() {
@@ -668,17 +769,6 @@
       adjustControls.style.display = 'block';
     }
 
-    // Listen for pheta selection
-    document.addEventListener('click', function(e) {
-      if (e.target.closest('.btn1')) {
-        // Wait a bit for the overlay to be created
-        setTimeout(() => {
-          const overlay = document.querySelector('.container1 .drag-overlay');
-          updateControlsFromOverlay(overlay);
-        }, 100);
-      }
-    });
-
     // Copy Position Only button - copies just the position values in format: { top: "-4px", left: "81px", width: "113px", height: "69px" }
     document.getElementById('btnCopyPositionOnly').addEventListener('click', function() {
       const overlay = document.querySelector('.container1 .drag-overlay');
@@ -702,6 +792,50 @@
         console.error('Could not copy text: ', err);
         showInlineMessage('Position values displayed above (copy manually)');
       });
+    });
+    
+    // Show All Positions button - displays all current positions for the current Murti
+    document.getElementById('btnShowAllPositions').addEventListener('click', function() {
+      const murtiName = document.getElementById('murtiImage').src.split('/').pop();
+      const murtiPath = `Murti_Images/${murtiName}`;
+      
+      if (!overlayPositions[murtiPath]) {
+        showInlineMessage('No positions found for current Murti');
+        return;
+      }
+      
+      // Generate formatted code for all positions
+      let allPositionsCode = `"${murtiPath}": {\n`;
+      const positions = overlayPositions[murtiPath];
+      
+      Object.keys(positions).forEach((key, index, array) => {
+        const pos = positions[key];
+        allPositionsCode += `        ${key}: { top: "${pos.top}", left: "${pos.left}", width: "${pos.width}", height: "${pos.height}" }`;
+        if (index < array.length - 1) {
+          allPositionsCode += ',';
+        }
+        allPositionsCode += '\n';
+      });
+      
+      allPositionsCode += `      }`;
+      
+      // Display all positions
+      const codeOutput = document.getElementById('codeOutput');
+      codeOutput.innerHTML = `
+        <strong>All Positions for ${murtiName}:</strong><br>
+        <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; font-family: monospace; font-size: 12px; margin: 5px 0;">${allPositionsCode}</pre>
+        <small style="color: #666;">All current positions (including any updates you made)</small>
+      `;
+      codeOutput.style.display = 'block';
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(allPositionsCode).then(() => {
+        showInlineMessage('✓ All positions copied to clipboard!');
+      }).catch(err => {
+        showInlineMessage('All positions displayed above');
+      });
+      
+      console.log('All positions for', murtiPath, ':', positions);
     });
     
     // Batch center alignment
